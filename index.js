@@ -8,6 +8,11 @@ const http = require('http');
 let url = require('url');
 
 
+// To run this, open two terminals, one at root and type `node index.js`
+// in the second terminal, type `curl localhost:3000/foo/bar`
+// you should see `foo/bar` in the terminal window running node
+
+
 // The server should respont to all requests with a string
 var server = http.createServer(function(req,res) {
 
@@ -19,11 +24,14 @@ var server = http.createServer(function(req,res) {
     let path = parsedURL.pathname; // the untrimmed path
     let trimmedPath = path.replace(/^\/+|\/+$/g,'');
 
+    // Get the HTTP Method
+    let method = req.method.toUpperCase();
+
     // Send response
     res.end('Hello World\n');
 
     // Log the requested path
-    console.log('Request received on path: ' + trimmedPath);
+    console.log('Request received on path: ' + trimmedPath+ ' with this method: ' +method);
     
 });
 
