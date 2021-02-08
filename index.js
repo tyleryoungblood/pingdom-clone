@@ -31,6 +31,9 @@ var server = http.createServer(function(req,res) {
     // Get the HTTP Method
     let method = req.method.toUpperCase();
 
+    // Get the headers as an object
+    const headers = req.headers;
+
     // Send response
     res.end('Hello World\n');
 
@@ -38,6 +41,7 @@ var server = http.createServer(function(req,res) {
     console.log('Request received on path: ' + trimmedPath+ 
                 ' with this method: ' +method+ 
                 ' and with these queryString parameters: ', queryStringParsed);
+    console.log('Request received with these headers', headers);
     
 });
 
