@@ -7,6 +7,7 @@
 const http = require('http');
 const url = require('url');
 const StringDecoder = require('string_decoder').StringDecoder;
+const config = require('./config');
 
 
 // To run this, open two terminals, one at root and type `node index.js`
@@ -83,9 +84,9 @@ const server = http.createServer(function(req,res) {
     
 });
 
-// Start the sever, and have it listen on port 3000
-server.listen(3000, function(){
-    console.log('The server is listening on port 3000 now.');
+// Start the sever
+server.listen(config.port, function(){
+    console.log('The server is listening on port ' + config.port + ' in ' + config.envName + ' mode.');
 });
 
 // Define the handlers
