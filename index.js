@@ -60,7 +60,7 @@ const unifiedServer = function(req, res) {
     const queryStringParsed = JSON.parse(queryStringObject);
 
     // Get the HTTP Method
-    const method = req.method.toUpperCase();
+    const method = req.method.toLowerCase();
 
     // Get the headers as an object
     const headers = req.headers;
