@@ -56,8 +56,7 @@ const unifiedServer = function(req, res) {
     const trimmedPath = path.replace(/^\/+|\/+$/g,'');
 
     // Get the query string as an object
-    const queryStringObject = JSON.stringify(parsedURL.query, null, 4);
-    const queryStringParsed = JSON.parse(queryStringObject);
+    const queryStringObject = parsedURL.query;
 
     // Get the HTTP Method
     const method = req.method.toLowerCase();
