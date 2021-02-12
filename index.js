@@ -13,6 +13,12 @@ const fs = require('fs');
 const handlers = require('./lib/handlers');
 const helpers = require('./lib/helpers');
 
+// TODO - delete this
+// helpers.sendTwilioSms('2087614474', 'Hello!', function(err){
+//     console.log('this was the err', err);
+// }); 
+
+
 
 // To run this, open two terminals, one at root and type `node index.js`
 // in the second terminal, type `curl localhost:3000/foo/bar`
